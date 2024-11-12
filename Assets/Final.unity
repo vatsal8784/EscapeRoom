@@ -1200,7 +1200,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: f6dd5e5cfe089754b873438202b01fd6, type: 3}
 --- !u!1001 &399848672
@@ -1566,7 +1566,7 @@ Transform:
   m_GameObject: {fileID: 495017137}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.41, z: 3.66}
+  m_LocalPosition: {x: -0.12, y: -0.17, z: 2.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3073,7 +3073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83db58ae335884bd5a89d144e131dff7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.641
+      value: 2.6479
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83db58ae335884bd5a89d144e131dff7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3737,8 +3737,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.09, y: 1.03, z: 2.47}
+  m_Center: {x: 0, y: 0.12, z: 0.53}
 --- !u!114 &1517060098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3819,7 +3819,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
