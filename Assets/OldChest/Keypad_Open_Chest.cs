@@ -96,11 +96,9 @@ namespace NavKeypad
             yield return new WaitForSeconds(displayResultTime);
             displayingResult = false;
 
-            if (!granted)
-            {
-                ClearInput();
-                panelMesh.material.SetVector("_EmissionColor", screenNormalColor * screenIntensity);
-            }
+            if (granted) yield break;
+            ClearInput();
+            panelMesh.material.SetVector("_EmissionColor", screenNormalColor * screenIntensity);
         }
 
         private void AccessDenied()
