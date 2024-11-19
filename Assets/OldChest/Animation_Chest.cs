@@ -1,30 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Valve.VR.InteractionSystem;
 
-public class Animation_Chest : MonoBehaviour {
-    //create player for finding the controller and Anim for animator
-    Player player;
-    Animator anim;
+public class Animation_Chest : MonoBehaviour
+{
+    // Animator for controlling the chest animation
+    private Animator anim;
+    public AudioClip openSound;
+    private AudioSource audioSource;
 
-    //Awake would setup the values when the game started
+    // Awake is called when the script instance is being loaded
     private void Awake()
     {
-        //grab the player object from player 
-        player = GameObject.Find("Player").GetComponent<Player>();
-        //grab the animator object from it is own project
+        // Grab the Animator component on this GameObject
         anim = GetComponent<Animator>();
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
-    //function that would call when the chest is interact with the key
+    // Trigger function when the chest detects the "Key" object
     private void OnTriggerEnter(Collider other)
     {
+        // Check if the object has the "Key" tag
         if (other.gameObject.CompareTag("Key"))
         {
-            //trigger the animation to true so that it will play the animation
-            //anim.SetBool("Open_chest", true);
+            // Play the sound
+            if (openSound != null)
+            {
+                audioSource.PlayOneShot(openSound);
+            }
+            // Trigger the animation transition
             anim.SetTrigger("closedtoopen");
+            this.enabled = false; // Disable the script after use
         }
     }
+
+
+
 }
