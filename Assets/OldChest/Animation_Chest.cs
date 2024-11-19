@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Animation_Chest : MonoBehaviour
@@ -9,7 +8,8 @@ public class Animation_Chest : MonoBehaviour
     public AudioClip openSound;
     private AudioSource audioSource;
 
-    // Awake is called when the script instance is being loaded
+    private bool isOpen = false;
+
     private void Awake()
     {
         // Grab the Animator component on this GameObject
@@ -17,23 +17,20 @@ public class Animation_Chest : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
     }
 
-    // Trigger function when the chest detects the "Key" object
-    private void OnTriggerEnter(Collider other)
+    // Method to open the chest
+    public void OpenChest()
     {
-        // Check if the object has the "Key" tag
-        if (other.gameObject.CompareTag("Key"))
+        if (isOpen) return; // Prevent multiple openings
+
+        isOpen = true;
+
+        // Play the sound
+        if (openSound != null)
         {
-            // Play the sound
-            if (openSound != null)
-            {
-                audioSource.PlayOneShot(openSound);
-            }
-            // Trigger the animation transition
-            anim.SetTrigger("closedtoopen");
-            this.enabled = false; // Disable the script after use
+            audioSource.PlayOneShot(openSound);
         }
+
+        // Trigger the animation transition
+        anim.SetTrigger("closedtoopen");
     }
-
-
-
 }
