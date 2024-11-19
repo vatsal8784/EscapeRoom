@@ -1,4 +1,3 @@
-
 Library: C:\Users\danie\Desktop\EscapeRoom\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
 --platform=Android
 --backend=burst-llvm-16
